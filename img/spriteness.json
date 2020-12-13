@@ -1,0 +1,305 @@
+{
+	"frames":
+	{
+		"nezu00":
+		{
+			"frame":
+			{
+				"x":0,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":0,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu01":
+		{
+			"frame":
+			{
+				"x":300,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":300,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu02":
+		{
+			"frame":
+			{
+				"x":600,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":600,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu03":
+		{
+			"frame":
+			{
+				"x":900,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":900,
+				"y":0,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu04":
+		{
+			"frame":
+			{
+				"x":0,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":0,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu05":
+		{
+			"frame":
+			{
+				"x":300,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":300,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu06":
+		{
+			"frame":
+			{
+				"x":600,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":600,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu07":
+		{
+			"frame":
+			{
+				"x":900,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":900,
+				"y":300,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu08":
+		{
+			"frame":
+			{
+				"x":0,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":0,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu09":
+		{
+			"frame":
+			{
+				"x":300,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":300,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu10":
+		{
+			"frame":
+			{
+				"x":600,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":600,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		},
+		"nezu11":
+		{
+			"frame":
+			{
+				"x":900,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize":
+			{
+				"x":900,
+				"y":600,
+				"w":300,
+				"h":300
+			},
+			"sourceSize":
+			{
+				"w":300,
+				"h":300
+			}
+		}
+	},
+	"meta":
+	{
+		"app": "http://www.tansio.net/mobile/twitter/00002/",
+		"image":"nezu.png",
+		"format": "RGBA8888",
+		"size":
+		{
+				"w":1200,
+				"h":900
+		},
+		"scale": 1
+	}
+}
