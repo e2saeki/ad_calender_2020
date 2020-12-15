@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>E2 Advent Calendar 2020</title>
     <style>
-        #app, canvas {
+        body {
+            text-align: center;
+            padding: 1vh 0;
+            background: #f3f3f3;
+        }
+
+        #app,
+        canvas {
             max-width: 1400px;
             max-height: 900px;
             width: 100% !important;
@@ -17,52 +25,126 @@
             background: url(./img/beach.jpg) no-repeat center center;
             background-size: contain;
         }
+
+        *:focus {
+            outline: none;
+        }
+
+        .btn {
+            position: relative;
+            width: 160px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 300ms;
+            margin: 0 2vw 1vh;
+        }
+
+        .btn span {
+            display: block;
+            padding: 3px 0;
+            width: 100%;
+            height: 100%;
+            color: #333;
+            text-align: center;
+            font-size: .9rem;
+        }
+
+        .btn span:hover {
+            color: #666;
+        }
+
+        .btn::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border-radius: 40px;
+            background-color: #f7f7f7;
+            box-shadow: 5px 5px 5px rgba(46, 38, 36, 0.1), -5px -5px 5px #fff;
+            content: "";
+            transition: all 300ms;
+        }
+
+        .btn:hover {
+            box-shadow: 1px 1px 1px rgba(46, 38, 36, 0.1), -1px -1px 1px #fff;
+        }
+
+        .btn:hover::before {
+            opacity: 0.5;
+        }
+
+        .btn:active {
+            box-shadow: inset 5px 5px 5px rgba(46, 38, 36, 0.1), inset -5px -5px 5px #fff;
+        }
+
+
+        .btn:active::before {
+            opacity: 0;
+        }
+
+
     </style>
 </head>
 
 <body>
+    <div class="nav">
+        <button id="play" class="btn"><span>左右に動く</span></button>
+        <button id="pause" class="btn"><span>その場で回る</span></button>
+    </div>
     <main id="app"></main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.2.5/pixi.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/PixiPlugin.min.js"></script>
     <script>
-        let app = new PIXI.Application({
+        const app = new PIXI.Application({
             width: 1400,
             height: 900,
             autoDensity: true,
             transparent: true,
         });
-        let el = document.getElementById('app');
+        const el = document.getElementById('app');
         el.appendChild(app.view);
+
+        app.ticker.stop();
+        gsap.ticker.add(() => {
+            app.ticker.update();
+        });
+
+        const nezumiContainer = new PIXI.Container();
+        app.stage.addChild(nezumiContainer);
+
         app.loader
             .add('./img/spriteness.json')
             .load(onAssetsLoaded);
 
         function onAssetsLoaded() {
             const frames = [];
-
             for (let i = 0; i < 11; i++) {
                 const val = i < 10 ? `0${i}` : i;
                 frames.push(PIXI.Texture.from(`nezu${val}`));
             }
             const nezumi = new PIXI.AnimatedSprite(frames);
-
-            nezumi.x = app.screen.width / 1.6;
+            nezumi.x = app.screen.width / 2;
             nezumi.y = app.screen.height / 1.9;
             nezumi.anchor.set(0.5);
             nezumi.animationSpeed = .3;
             nezumi.play();
-
-            app.stage.addChild(nezumi);
-            gsap.to(nezumi, 1, {
-                pixi: {
-                    x: nezumi.x - 100,
-                },
-                ease: Power1.easeInOut,
-                repeat: -1,
-                yoyo: true
-            });
+            nezumiContainer.addChild(nezumi);
         }
+
+        const tween = gsap.to(nezumiContainer, 1, {
+            x: 300,
+            ease: Power1.easeInOut,
+            repeat: -1,
+            yoyo: true,
+            paused: true
+        });
+
+        document.querySelector("#play").onclick = () => tween.play();
+        document.querySelector("#pause").onclick = () => tween.pause();
     </script>
 </body>
 
