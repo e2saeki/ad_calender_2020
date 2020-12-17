@@ -9,128 +9,136 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Roboto:wght@500&display=swap" rel="stylesheet">
 <style>
 body {
-    padding: 1vh 0;
-    background: #f3f3f3;
-    text-align: center;
+	padding: 1vh 0;
+	background: #f3f3f3;
+	text-align: center;
 }
 #app,
 canvas {
-    position: relative;
-    z-index: 2;
-    margin: auto;
-    max-width: 1400px;
-    max-height: 900px;
-    width: 100% !important;
-    height: auto !important;
+	position: relative;
+	z-index: 2;
+	margin: auto;
+	max-width: 1400px;
+	max-height: 900px;
+	width: 100% !important;
+	height: auto !important;
 }
 #app {
-    background: url(./img/christmas.jpg) no-repeat center center;
-    background-size: contain;
-    overflow: hidden;
+	overflow: hidden;
+	background: url(./img/christmas.jpg) no-repeat center center;
+	background-size: contain;
 }
 #summer {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: url(./img/beach.jpg) no-repeat center center;
-    background-size: contain;
-    pointer-events: none;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background: url(./img/beach.jpg) no-repeat center center;
+	background-size: contain;
+	pointer-events: none;
 }
 *:focus {
-    outline: none;
+	outline: none;
 }
 .btn {
-    position: relative;
-    margin: 0 2vw 1vh;
-    width: 160px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: all 300ms;
+	position: relative;
+	margin: 0 2vw 1vh;
+	width: 160px;
+	border: none;
+	border-radius: 40px;
+	cursor: pointer;
+	transition: all 300ms;
+    background-color: #f7f7f7;
 }
 .btn span {
-    display: block;
-    padding: 3px 0;
-    width: 100%;
-    height: 100%;
-    color: rgb(43, 68, 92);
-    text-align: center;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+	display: block;
+	padding: 3px 0;
+	width: 100%;
+	height: 100%;
+	color: #333;
+	text-align: center;
+	font-size: 1rem;
+	font-family: "Roboto", sans-serif;
 }
 .btn span:hover {
-    color: #666;
+	color: #666;
 }
 .btn::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    background-color: #f7f7f7;
-    box-shadow: 5px 5px 5px rgba(46, 38, 36, .1), -5px -5px 5px #fff;
-    content: "";
-    transition: all 300ms;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	border-radius: 40px;
+	background-color: #f7f7f7;
+	box-shadow: 5px 5px 5px rgba(46, 38, 36, .1), -5px -5px 5px #fff;
+	content: "";
+	transition: all 300ms;
 }
 .btn:hover {
-    box-shadow: 1px 1px 1px rgba(46, 38, 36, .1), -1px -1px 1px #fff;
+	box-shadow: 1px 1px 1px rgba(46, 38, 36, .1), -1px -1px 1px #fff;
 }
 .btn:hover::before {
-    opacity: .5;
+	opacity: .5;
 }
 .btn:active span:hover {
-    color: #aaa;
+	color: #aaa;
 }
 .btn:active {
-    box-shadow: inset 5px 5px 5px rgba(46, 38, 36, .1), inset -5px -5px 5px #fff;
+	box-shadow: inset 5px 5px 5px rgba(46, 38, 36, .1), inset -5px -5px 5px #fff;
 }
 .btn:active::before {
-    opacity: 0;
+	opacity: 0;
 }
 .text {
-    display: block;
-    font-size: 15vmin;
-    line-height: 40vh;
-    font-family: 'Bungee Outline', cursive;
-    height: 100%;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    z-index: 2;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	display: block;
+	width: 100vw;
+	height: 100%;
+	font-size: 15vw;
+	font-family: "Bungee Outline", cursive;
 }
 .text .merry,
 .text .christmas {
-    position: relative;
-    height: 50%;
-    display: block;
+	position: relative;
+	display: block;
+	height: 50%;
 }
 .word {
-    opacity: 0;
-    position: relative;
-    z-index: 1;
-    color: #fff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	display: block;
+	margin: auto;
+	height: 15vw;
+	color: rgb(228, 186, 0);
+	opacity: 0;
 }
-.merry_bg, .christmas_bg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    transform-origin: left;
-    transform: scaleX(0);
+.merry_bg,
+.christmas_bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(0);
+	transform-origin: left;
 }
 .merry_bg {
-    background-color: #d85a34;
+	background-color: #bd4545;
 }
 .christmas_bg {
-    background-color: #0d7426;
+	background-color: #377537;
 }
+
 </style>
 
 </head>
