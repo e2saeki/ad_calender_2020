@@ -117,7 +117,7 @@ canvas {
 	display: block;
 	margin: auto;
 	height: 15vw;
-	color: rgb(228, 186, 0);
+	color: #fff;
 	opacity: 0;
 }
 .merry_bg,
@@ -185,7 +185,7 @@ canvas {
                 frames.push(PIXI.Texture.from(`nezu${val}`));
             }
             const nezumi = new PIXI.AnimatedSprite(frames);
-            nezumi.x = app.screen.width / 2.2;
+            nezumi.x = app.screen.width / 2.5;
             nezumi.y = app.screen.height / 1.7;
             nezumi.anchor.set(0.5);
             nezumi.animationSpeed = 0.3;
@@ -195,17 +195,17 @@ canvas {
         }
         function merryChristmas() {
             const tl = new TimelineMax();
-            tl.to(nezumiContainer, 0.3, {y: 0})
-                .to('.word', 0, {opacity: 0})
-                .to('#summer',0.6,{ opacity: 1,ease: Power1.easeInOut}, -0.3)
-                .to('.merry_bg', 0.2, {scaleX: 1})
+            tl.to(nezumiContainer, 0.4, {y: -50})
+                .to('.word', 0, {opacity: 0},-0.4)
+                .to('#summer',0.4,{ opacity: 1,ease: Power1.easeInOut})
+                .to('.merry_bg', 0.2, {scaleX: 1}, 2)
                 .to('.christmas_bg', 0.2, {scaleX: 1})
                 .to('.word', 0.1, {opacity: 1}, "-=0.1")
                 .to('#summer',0.1,{opacity: 0})
-                .to(nezumiContainer, 0.6, {y: 100,ease: Power1.easeInOut})
+                .to(nezumiContainer, 0.6, {y: 50,ease: Power1.easeInOut})
                 .to('.merry_bg', 0.2, {scaleX: 0})
                 .to('.christmas_bg', 0.2, {scaleX: 0})
-                .to('.word',0.2,{opacity: 0}, "-=0.2");
+                .to('.word',0.2,{opacity: 0}, "-=0.3");
                 }
         document.querySelector("#merry").onclick = () => merryChristmas();
     </script>
